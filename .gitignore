@@ -1,0 +1,59 @@
+# Swift & Xcode
+DerivedData/
+build/
+*.xcworkspace
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcuserstate
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+Packages/
+.swiftpm/
+Package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+*.xcworkspace
+
+# Carthage
+Carthage/
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Archives
+*.xcarchive
+
+# App-specific
+*.env
+*.DS_Store
+
+# Firebase
+GoogleService-Info.plist
+
+# Xcode automatic backup files
+*.xccheckout
+*.xcscmblueprint
+
+# Simulator logs
+coreSimulatorLogs/
+
+# Swift Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# IDE preferences
+.idea/
+.vscode/

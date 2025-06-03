@@ -11,6 +11,7 @@ struct SignInView: View {
         @State private var username: String = ""
         @State private var password: String = ""
         @State private var rememberMe: Bool = false
+        @State private var isPasswordVisible: Bool = false
         
         var body: some View {
             NavigationStack {
@@ -28,10 +29,27 @@ struct SignInView: View {
                             .cornerRadius(12)
                             .autocapitalization(.none)
                         
-                        SecureField("Password", text: $password)
+                        ZStack(alignment: .trailing) {
+                            Group {
+                                if isPasswordVisible {
+                                    TextField("Password", text: $password)
+                                } else {
+                                    SecureField("Password", text: $password)
+                                }
+                            }
                             .padding()
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(12)
+                            .autocapitalization(.none)
+
+                            Button(action: {
+                                isPasswordVisible.toggle()
+                            }) {
+                                Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                                    .foregroundColor(.gray)
+                                    .padding()
+                            }
+                        }
                         
                         HStack {
                             Toggle(isOn: $rememberMe) {
@@ -44,7 +62,7 @@ struct SignInView: View {
                             
                             Spacer()
                             
-                            NavigationLink(destination: ForgotPasswordView())
+                            NavigationLink(destination: EmailView(title: "Forgot Password", description: "We'll send you link to reset password"))
                             {
                                 Text("Forgot Password?")
                                     .font(.subheadline)
@@ -64,6 +82,42 @@ struct SignInView: View {
                                 .background(Color.blue.opacity(0.4))
                                 .foregroundColor(.black)
                                 .cornerRadius(12)
+                        }
+                        
+                        Button(action: {
+                            // Sign-in logic here
+                        }) {
+                            HStack {
+                                Image(systemName: "globe") // Replace with your custom Google icon asset name if available
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
+                                Text("Google")
+                                    .fontWeight(.semibold)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue.opacity(0.4))
+                            .foregroundColor(.black)
+                            .cornerRadius(12)
+                        }
+                        
+                        Button(action: {
+                            // Sign-in logic here
+                        }) {
+                            HStack {
+                                Image(systemName: "globe") // Replace with your custom Google icon asset name if available
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
+                                Text("Apple")
+                                    .fontWeight(.semibold)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue.opacity(0.4))
+                            .foregroundColor(.black)
+                            .cornerRadius(12)
                         }
                     }
                     
@@ -101,6 +155,6 @@ struct SignInView: View {
     
 }
 
-#Preview {
-    SignInView()
-}
+//#Preview {
+//    SignInView()
+//}

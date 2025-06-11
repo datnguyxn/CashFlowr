@@ -127,11 +127,11 @@ struct SignInView: View {
                         Text("Don't have an account?")
                             .foregroundColor(.gray)
                         // Navigate to Sign Up
-                        NavigationLink(destination: SignUpView())
-                        {
-                            Text("Sign Up")
-                                .foregroundColor(Color.blue.opacity(0.4))
-                        }
+//                        NavigationLink(destination: SignUpView())
+//                        {
+//                            Text("Sign Up")
+//                                .foregroundColor(Color.blue.opacity(0.4))
+//                        }
                     }
                     .font(.footnote)
                 }

@@ -17,7 +17,7 @@ struct LaunchView: View {
                     .transition(.scale)
             } else {
 //                HomeView()
-                SignInView()
+                BoardingView()
                     .transition(.opacity)
             }
         }
